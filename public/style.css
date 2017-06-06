@@ -5,6 +5,7 @@
 }
 
 #pokedexImages {
-  display: inline-block;
+  display: center;
+  margin: auto;
   vertical-align: top;
 }
