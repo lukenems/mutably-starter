@@ -1,1 +1,10 @@
 /*Custom styles here*/
+#pokedex {
+  display: inline-block;
+
+}
+
+#pokedexImages {
+  display: inline-block;
+  vertical-align: top;
+}

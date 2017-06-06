@@ -12,18 +12,22 @@ console.log("Sanity Check: JS is working!");
   ourRequest.send();
   function renderHTML(data) {
     var htmlString = "";
-    var pokemonImages = "";
+    // var pokemonImages = function() {
+    // for(i = 0; i < data.pokemon.length; i++) {
+    //   imageURL = data.pokemon[i].image
+    //   pokemonImages+= "<img src=" + imageURL + ">"
+    //   console.log(data.pokemon[i].image)
+    // }}
     for(i = 0; i < data.pokemon.length; i++) {
-      htmlString+= "<p>" + data.pokemon[i].name + " " + data.pokemon[i].pokedex + " " + data.pokemon[i].evolves_from + " " + "</p>"
-    }
-
-    for(i = 0; i < data.pokemon.length; i++) {
+      var pokemonImages = "";
       imageURL = data.pokemon[i].image
       pokemonImages+= "<img src=" + imageURL + ">"
-      console.log(data.pokemon[i].image)
+      htmlString+= "<p>" + data.pokemon[i].name + " " + data.pokemon[i].pokedex + " " + data.pokemon[i].evolves_from + " " + "</p>" + pokemonImages
+
     }
+
     pokemonContainer.insertAdjacentHTML('beforeend', htmlString)
-    imageContainer.insertAdjacentHTML('beforeend', pokemonImages)
+    pokemonContainer.insertAdjacentHTML('beforeend', pokemonImages)
 
 
 
