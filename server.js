@@ -10,7 +10,6 @@ app.set('view engine', 'html');
 
 app.get('/', (request, response) => {
   response.render('index')
-  response.send(console.log("what is going on?"));
 })
 
 const port = process.env.PORT || 3000
