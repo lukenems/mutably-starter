@@ -17,12 +17,8 @@ console.log("Sanity Check: JS is working!");
 
       pokemonImages+= "<img src=" + imageURL + ">"
 
-      htmlString+= "<p>" + "<strong>Name: </strong>" +data.pokemon[i].name + " " + "<strong>Pokédex Number: </strong>" + data.pokemon[i].pokedex + " " + "<strong>Evolves from: </strong>" + data.pokemon[i].evolves_from + " " + "</p>" + pokemonImages
+      htmlString+= "<p>" + "<strong>Name: </strong>" +data.pokemon[i].name + " " + "<strong>Pokédex Number: </strong>" + data.pokemon[i].pokedex + " " + "<strong>Evolves from: </strong>" + data.pokemon[i].evolves_from + " " + "</p>" + pokemonImages + "<button>Edit</button>"
 
     }
-
     pokemonContainer.insertAdjacentHTML('beforeend', htmlString)
-
-
-
   }
