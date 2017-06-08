@@ -9,3 +9,7 @@
   margin: auto;
   vertical-align: top;
 }
+
+.new-pokemon {
+  display: none;
+}
