@@ -21,13 +21,9 @@ $('#get-button').on('click', function() {
       $('.edit-button').on('click', function() {
         console.log('please work.')
         $(this).hide();
-        $('.save-button').show();
-        // $(this).children('.pokemon-info').hide();
-        // var thisPokemonInfo = $(this).attr('.pokemon-info')
-        // $(thisPokemonInfo).hide();
-
-        // $("#editTitle").show();
-        // $("#saveTitleButton").show();
+        $(this).next('.save-button').show();
+        $(this).prevAll('.pokemon-info').hide();
+        // $('.save-button').show();
       });
     })
 });
