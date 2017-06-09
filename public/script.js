@@ -3,10 +3,10 @@ var pokemonContainer = document.getElementById("pokedex")
 
 $(document).ready(function(){
 
-    $("#add-button").click(function() {
-      $(".new-pokemon").show();
-      $("#add-button").hide();
-    });
+    // $("#add-button").on('click', function() {
+    //   $(".new-pokemon").show();
+    //   $("#add-button").show();
+    // });
 
     $('#get-button').on('click', function(event) {
       event.preventDefault()
@@ -51,13 +51,32 @@ $(document).ready(function(){
         })
     });
 
+    $('#create-form').on('submit', function(event) {
+      event.preventDefault();
 
-    $(document).on('click', '.save-button', function() {;
-      console.log(pokemonId);
-      var updatedInfo = $('')
-        $.ajax({
-            method: 'PUT',
-            url: 'https://mutably.herokuapp.com/pokemon'+ id,
-      });
-});
+      var createName = $('#name-input').val();
+      var createNumber = $('#number-input').val();
+      var createEvolvesFrom = $('#evolvesfrom-input').val();
+      var createImgUrl = $('#imageurl-input').val();
+
+      $.ajax({
+        url: 'https://mutably.herokuapp.com/pokemon',
+        method: 'POST',
+        data: "name=" + createName + '&' + "pokedex=" + createNumber + '&' + "evolves_from=" + createEvolvesFrom + '&' + "image=" + createImgUrl,//({name: createName, pokedex: createNumber, evolves_from: createEvolvesFrom, image: createImgUrl}),
+        success: function(response) {
+          console.log("shits working!");
+          //createName.val('');
+          $('#get-button').click();
+        }
+      })
+    });
+
+
+    // $(document).on('click', '.save-button', function() {;
+    //   console.log(pokemonId);
+    //   var updatedInfo = $('')
+    //     $.ajax({
+    //         method: 'PUT',
+    //         url: 'https://mutably.herokuapp.com/pokemon'+ id,
+    //   });
 });
