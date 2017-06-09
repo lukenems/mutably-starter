@@ -64,12 +64,25 @@ $(document).ready(function(){
         method: 'POST',
         data: "name=" + createName + '&' + "pokedex=" + createNumber + '&' + "evolves_from=" + createEvolvesFrom + '&' + "image=" + createImgUrl,//({name: createName, pokedex: createNumber, evolves_from: createEvolvesFrom, image: createImgUrl}),
         success: function(response) {
-          console.log("shits working!");
-          //createName.val('');
           $('#get-button').click();
+          $('#name-input').val('Name');
+
         }
       })
     });
+    $('#name-input').on('click', function() {
+      $('#name-input').val('');
+    });
+    $('#number-input').on('click', function() {
+      $('#number-input').val('');
+    });
+    $('#evolvesfrom-input').on('click', function() {
+      $('#evolvesfrom-input').val('');
+    });
+    $('#imageurl-input').on('click', function() {
+      $('#imageurl-input').val('');
+    });
+
 
 
     // $(document).on('click', '.save-button', function() {;
